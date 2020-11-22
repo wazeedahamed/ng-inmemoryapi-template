@@ -1,0 +1,49 @@
+<h1>Ng In Memory API Template [NOT MUCH STYLED]</h1>
+<div style="width: 50%; display: inline-flex;">
+  <table class="bordered">
+    <thead>
+      <tr>
+        <th class="width50px number">S.No.</th>
+        <th class="width50px number">Id</th>
+        <th>User Name</th>
+        <th>Gender</th>
+        <th class="width90px">Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let user of userList; let idx = index;">
+        <td class="text-right">{{(idx + 1)}}</td>
+        <td class="text-right">{{user.id}}</td>
+        <td>{{user.name}}</td>
+        <td>{{user.gender}}</td>
+        <td class="text-center">
+          <button title="Edit" (click)="EditUser(user.id)">...</button>
+          &nbsp;
+          <button title="Delete" (click)="DeleteUser(user.id)">X</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<div style="width: 40%; display: inline-flex; padding: 50px;">
+  <form [formGroup]="form">
+    <div style="margin-bottom: 10px;">
+      <div>Name: </div>
+      <input formControlName="name">
+    </div>
+    <div style="margin-bottom: 10px;">
+      <div>Gender: </div>
+      <select formControlName="gender">
+        <option value=""></option>
+        <option value="Male">Male</option>
+        <option value="Female">Female</option>
+        <option value="Other">Other</option>
+      </select>
+    </div>
+    <div>
+      <button [disabled]="form.invalid" type="button" (click)="SaveUser()">{{edit_id == 0 ? "Add" : "Update"}}</button>
+    </div>
+  </form>
+</div>
+
+<router-outlet></router-outlet>

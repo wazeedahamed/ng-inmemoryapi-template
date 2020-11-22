@@ -1,0 +1,23 @@
+button {
+    padding: 2px 10px;
+}
+table.bordered {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+    td, th {
+        border: 1px solid black;
+    }
+}
+.width50px {
+    width: 50px;
+}
+.width90px {
+    width: 90px;
+}
+.text-right {
+    text-align: right;
+}
+.text-center {
+    text-align: center;
+}
