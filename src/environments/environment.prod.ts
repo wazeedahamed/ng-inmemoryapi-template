@@ -1,6 +1,6 @@
 export const environment = {
   production: true,
   url: {
-    api: 'add_priduction_api_url'
+    api: 'add_production_api_url'
   }
 };
